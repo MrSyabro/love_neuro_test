@@ -104,4 +104,4 @@ function network:draw()
     end--]]
 end
 
-objs:add_object(network)
+objs:add(network)
