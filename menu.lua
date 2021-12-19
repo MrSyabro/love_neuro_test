@@ -15,14 +15,14 @@ local function convert_color(color)
     return c
 end
 
-color1 = ui.new_textentry("color1_entry", 100, 20)
+color1 = ui.new_textentry("color1_entry", utils.tc(0.01, 0.02))
 color1.textinput = "#bf616a"
-color2 = ui.new_textentry("color2_entry", 100, 80)
+color2 = ui.new_textentry("color2_entry", utils.tc(0.01, 0.1))
 color2.textinput = "#ebcb8b"
-color3 = ui.new_textentry("color3_entry", 100, 140)
+color3 = ui.new_textentry("color3_entry", utils.tc(0.01, 0.18))
 color3.textinput = "#b48ead"
 
-button1 = ui.new_button("start_bt", 100, 200)
+button1 = ui.new_button("start_bt", utils.tc(0.01, 0.26))
 button1.printed_name = "Start"
 function button1.callbacks.mousepressed(self)
     engine.userdata[1] = convert_color(color1.textinput)
