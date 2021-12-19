@@ -26,6 +26,7 @@ function network:load()
     self.nn = nn.Network {
         nn.Dense(2, 6),
         nn.Dense(6, 6),
+        nn.Dense(6, 6),
         nn.Dense(6, 3)
     }
     objs.mouse:register("pressed", self)
