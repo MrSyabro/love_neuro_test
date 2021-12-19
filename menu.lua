@@ -26,13 +26,13 @@ button1 = ui.new_button("start_bt", 100, 200)
 button1.printed_name = "Start"
 function button1.callbacks.mousepressed(self)
     engine.userdata[1] = convert_color(color1.textinput)
-    engine.info (("Add color 1 {%f, %f, %f}"):format(engine.userdata[1][1], engine.userdata[1][2], engine.userdata[1][3]))
+    utils.info (("Add color 1 {%f, %f, %f}"):format(engine.userdata[1][1], engine.userdata[1][2], engine.userdata[1][3]))
     engine.userdata[2] = convert_color(color2.textinput)
-    engine.info (("Add color 2 {%f, %f, %f}"):format(engine.userdata[2][1], engine.userdata[2][2], engine.userdata[2][3]))
+    utils.info (("Add color 2 {%f, %f, %f}"):format(engine.userdata[2][1], engine.userdata[2][2], engine.userdata[2][3]))
     engine.userdata[3] = convert_color(color3.textinput)
-    engine.info (("Add color 3 {%f, %f, %f}"):format(engine.userdata[3][1], engine.userdata[3][2], engine.userdata[3][3]))
+    utils.info (("Add color 3 {%f, %f, %f}"):format(engine.userdata[3][1], engine.userdata[3][2], engine.userdata[3][3]))
 
-    engine:load_scene(love.filesystem.getSource().."neuro_scene.lua")
+    engine:load_scene("neuro_scene.lua")
 end
 
 objs:add(color1)

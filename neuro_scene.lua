@@ -7,18 +7,9 @@ local draw = false
 
 network = ui.new_object("network")
 network.colors = {}
--- [[
-network.colors[1] = {engine.userdata[1][1], engine.userdata[1][2], engine.userdata[1][3]}
-network.colors[2] = {engine.userdata[2][1], engine.userdata[2][2], engine.userdata[2][3]}
-network.colors[3] = {engine.userdata[3][1], engine.userdata[3][2], engine.userdata[3][3]} --]]
---[[
-network.colors[1] = {1, 0, 0}
-network.colors[2] = {0, 1, 0}
-network.colors[3] = {0, 0, 1} --]]
---[[
-network.colors[1] = {0.81, 0.13, 0.16}
-network.colors[2] = {0.16, 0.81, 0.13}
-network.colors[3] = {0.10, 0.17, 0.81} --]]
+network.colors[1] = engine.userdata[1]
+network.colors[2] = engine.userdata[2]
+network.colors[3] = engine.userdata[3]
 network.inputs = {}
 network.outputs = {}
 network.points = {}
@@ -67,7 +58,7 @@ end
 
 function network:keypressed( key, scancode, isrepeat )
     if key == "p" then
-        print ("Calculating...")
+        utils.info ("Calculating...")
         local imageData = love.image.newImageData(4096, 3072)
         for w = 0, 4096 - 1 do
             for h = 0, 3072 - 1 do
@@ -79,7 +70,17 @@ function network:keypressed( key, scancode, isrepeat )
         end
 
         imageData:encode("png", "screenshot.png")
-        print ("Immage saved.")
+        utils.info ("Immage saved.")
+    elseif key == "r" then
+        utils.info("Reseting network")
+        self.nn = nn.Network {
+            nn.Dense(2, 6),
+            nn.Dense(6, 6),
+            nn.Dense(6, 6),
+            nn.Dense(6, 3)
+        }
+    elseif key == "q" then
+        engine:load_scene("menu.lua")
     end
 end
 
