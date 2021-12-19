@@ -21,6 +21,6 @@ love2d ./
 ### Запуск одним файлом
 
 ```
-wget 
+wget https://github.com/MrSyabro/love_neuro_test/releases/download/test3/love_neuro_test.love
 love2d love_neuro_test.love
 ```
