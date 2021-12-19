@@ -31,19 +31,16 @@ function network:update(dt)
             self.nn:train(self.inputs[i], self.colors[self.outputs[i]], 1)
         end
     end
-
-    --if draw then
-        local points = {}
-        for w = 0, (ww / 10) do
-            for h = 0, (wh / 10) do
-                local uw, uh = utils.tu(w * 10, h * 10)
-                local o = self.nn:predict ( uw, uh )
-                table.insert(points, {w * 10, h * 10, o[1], o[2], o[3]})
-            end
+    local points = {}
+    for w = 0, (ww / 10) do
+        for h = 0, (wh / 10) do
+            local uw, uh = utils.tu(w * 10, h * 10)
+            local o = self.nn:predict ( uw, uh )
+            table.insert(points, {w * 10, h * 10, o[1], o[2], o[3]})
         end
+    end
 
-        self.points = points
-    --end
+    self.points = points
 
     draw = not draw
 end
@@ -81,6 +78,9 @@ function network:keypressed( key, scancode, isrepeat )
         }
     elseif key == "q" then
         engine:load_scene("menu.lua")
+    elseif key == "c" then
+        self.inputs = {}
+        self.outputs = {}
     end
 end
 

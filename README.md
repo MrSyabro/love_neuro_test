@@ -9,6 +9,7 @@
 * Клавиша `p` на клавиатуре, программа отрендерит 4К изображение в папку сохранения Love2D.
 * Клавиша `r` создает новую нейросеть.
 * Клавиша `q` возвращает на начальное меню.
+* Клавиша `c` очищает все точки.
 
 ### Запуск из исходников
 
@@ -21,6 +22,6 @@ love2d ./
 ### Запуск одним файлом
 
 ```
-wget https://github.com/MrSyabro/love_neuro_test/releases/download/test3/love_neuro_test.love
+wget https://github.com/MrSyabro/love_neuro_test/releases/download/test4/love_neuro_test.love
 love2d love_neuro_test.love
 ```
